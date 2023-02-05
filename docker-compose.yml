@@ -1,0 +1,17 @@
+version: '3'
+services:
+  pizza-app:
+    build: .
+    image: pizza-app
+    user: root
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+
+  mongodb:
+    image: mongo
+    user: root
+    restart: always
+    ports:
+      - "27017:27017"
